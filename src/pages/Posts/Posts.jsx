@@ -22,12 +22,13 @@ const Posts = props => {
 
   return (
     <div>
-      <div>
+      <div className={styles.box}>
         {pages.map(p => {
           return (
             <span
               key={p}
               className={currentPage === p ? styles.selectedPage : styles.page}
+              // className={styles.boxPage}
               onClick={e => {
                 setCurrentPage(p);
               }}

@@ -9,6 +9,11 @@
     margin: 7px;
     font-size: 13px;
     cursor: pointer;
+    /* padding-top: 10px */
+}
+
+.box {
+    padding-top: 10px
 }
 
 .com {
@@ -35,14 +40,6 @@
     font-size: 17px;
     font-weight: bold;
     text-decoration: none;
-}
-
-.footer {
-    flex: 0 0 auto;
-}
-
-.header {
-    flex: 0 0 auto;
 }
 
 .list {
