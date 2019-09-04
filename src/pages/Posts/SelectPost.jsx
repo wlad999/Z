@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import styles from "./Posts.module.css";
 import { getComentsThunk } from "../../redux/reducers/postsReducer";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 class SelectPost extends React.Component {
   state = {};
@@ -14,20 +15,26 @@ class SelectPost extends React.Component {
     return (
       <div className={styles.wrapper}>
         <Header />
-        <div className={styles.main}>
-          <p>TITLE: {this.props.selectedPost.title}</p>
-          <p>USER ID: {this.props.selectedPost.userId}</p>
-          <p>POST: {this.props.selectedPost.body}</p>
-          <p>COMENTS:</p>
-          <div className={styles.list}>
-            {this.props.coments.map(com => (
-              <div key={com.id}>
-                <div>NAME: {com.name}</div>
-                <div className={styles.com}>{com.body}</div>
-              </div>
-            ))}
+        {this.props.selectedPost.title ? (
+          <div className={styles.main}>
+            <p>TITLE: {this.props.selectedPost.title}</p>
+            <p>USER ID: {this.props.selectedPost.userId}</p>
+            <p>POST: {this.props.selectedPost.body}</p>
+            <p>COMENTS:</p>
+            <div className={styles.list}>
+              {this.props.coments.map(com => (
+                <div key={com.id}>
+                  <div>NAME: {com.name}</div>
+                  <div className={styles.com}>{com.body}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          <NavLink className={styles.mainEmpty} to={"/"}>
+            What are you waiting for??? - click on something !!!
+          </NavLink>
+        )}
         <Footer />
       </div>
     );

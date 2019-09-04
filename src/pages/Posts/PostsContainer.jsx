@@ -15,6 +15,7 @@ class PostsContainer extends React.Component {
   componentDidMount() {
     this.props.getPostsThunk();
   }
+
   render() {
     return (
       <div className={styles.wrapper}>

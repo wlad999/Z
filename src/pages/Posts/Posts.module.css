@@ -27,7 +27,14 @@
     margin: 0;
     font-size: 12px;
     text-align: start;
+}
 
+.mainEmpty {
+    width: 100%;
+    margin: auto;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .footer {
