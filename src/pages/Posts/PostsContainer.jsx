@@ -11,6 +11,7 @@ import {
 } from "../../redux/reducers/postsReducer";
 
 class PostsContainer extends React.Component {
+  state = {};
   componentDidMount() {
     this.props.getPostsThunk();
   }

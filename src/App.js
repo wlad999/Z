@@ -9,10 +9,10 @@ import SelectPost from "./pages/Posts/SelectPost.jsx";
 function App() {
   return (
     <div className="app-wrapper">
-      <Route exact path="/" render={() => <PostsContainer />} />
-      <Route path="/contact" render={() => <Contact />} />
-      <Route path="/about" render={() => <About />} />
-      <Route path="/selectpost" render={() => <SelectPost />} />
+      <Route exact path="/" render={props => <PostsContainer {...props} />} />
+      <Route path="/contact" render={props => <Contact {...props} />} />
+      <Route path="/about" render={props => <About {...props} />} />
+      <Route path="/selectpost" render={props => <SelectPost {...props} />} />
     </div>
   );
 }

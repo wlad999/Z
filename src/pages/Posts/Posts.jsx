@@ -26,6 +26,7 @@ const Posts = props => {
         {pages.map(p => {
           return (
             <span
+              key={p}
               className={currentPage === p ? styles.selectedPage : styles.page}
               onClick={e => {
                 setCurrentPage(p);
@@ -37,7 +38,7 @@ const Posts = props => {
         })}
         {currentArrPosts.map(Post => {
           return (
-            <div className={styles.page}>
+            <div className={styles.page} key={Post.id}>
               <NavLink
                 className={styles.nav}
                 to={"/selectpost"}

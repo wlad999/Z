@@ -21,7 +21,7 @@ class SelectPost extends React.Component {
           <p>COMENTS:</p>
           <div className={styles.list}>
             {this.props.coments.map(com => (
-              <div>
+              <div key={com.id}>
                 <div>NAME: {com.name}</div>
                 <div className={styles.com}>{com.body}</div>
               </div>
