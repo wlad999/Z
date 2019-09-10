@@ -17,3 +17,7 @@
 .header {
     flex: 0 0 auto;
 }
+
+.nav {
+    text-decoration: none;
+}

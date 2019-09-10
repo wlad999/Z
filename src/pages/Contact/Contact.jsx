@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import styles from "./Contact.module.css";
+import { NavLink } from "react-router-dom";
 
 const Contact = () => (
   <div className={styles.wrapper}>
@@ -14,7 +15,9 @@ const Contact = () => (
           http://zazend.com
         </a>
       </div>
-      <h3>Don`t thinking - go to Chernivtsi right now!</h3>
+      <NavLink className={styles.nav} to={"/"}>
+        <h3>Don`t thinking - go to Chernivtsi right now!</h3>
+      </NavLink>
     </main>
     <div className={styles.header}>
       <Footer />

@@ -47,9 +47,17 @@ export const setSelectedPostAC = post => ({
   type: SET_POST,
   post
 });
+export const delPostAC = () => ({
+  type: SET_POST,
+  post: {}
+});
 export const setComentsAC = coments => ({
   type: SET_COMENTS,
   coments
+});
+export const delComentsAC = () => ({
+  type: SET_COMENTS,
+  coments: []
 });
 export const currentPageAC = currentPage => ({
   type: SET_CARRENT_PAGE,

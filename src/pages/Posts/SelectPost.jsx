@@ -2,7 +2,11 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import styles from "./Posts.module.css";
-import { getComentsThunk } from "../../redux/reducers/postsReducer";
+import {
+  getComentsThunk,
+  delPostAC,
+  delComentsAC
+} from "../../redux/reducers/postsReducer";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
@@ -10,6 +14,10 @@ class SelectPost extends React.Component {
   state = {};
   componentDidMount() {
     this.props.getComentsThunk(this.props.selectedPost.id);
+  }
+  componentWillUnmount() {
+    this.props.delPostAC();
+    this.props.delComentsAC();
   }
   render() {
     return (
@@ -48,5 +56,5 @@ const MSTP = state => ({
 
 export default connect(
   MSTP,
-  { getComentsThunk }
+  { getComentsThunk, delPostAC, delComentsAC }
 )(SelectPost);
